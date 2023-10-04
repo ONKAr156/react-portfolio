@@ -1,0 +1,9 @@
+.footerColor{
+    background-color: rgb(45, 32, 45);
+    color: #fff;
+}
+.img{
+    background-image: url('../assets//images/bg1.png');
+    object-fit: cover;
+    z-index: 0;
+}

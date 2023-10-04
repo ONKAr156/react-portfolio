@@ -1,0 +1,9 @@
+.navData{
+    background-color: #212529;
+    color: #fff;
+}
+.img{
+    background-image: url('../assets//images/bg1.png');
+    object-fit: cover;
+    z-index: 0;
+}

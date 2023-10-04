@@ -1,0 +1,13 @@
+
+.homeData{
+    background-color: #222;
+    /* height: 100vh; */
+}
+/* 
+ */
+
+.img{
+    background-image: url('../assets//images/bg1.png');
+    object-fit: cover;
+    background-attachment: fixed;
+}

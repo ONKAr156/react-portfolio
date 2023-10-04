@@ -1,0 +1,8 @@
+.aboutTheme{
+    background-color: #222;
+  
+}
+.img{
+    background-image: url('../assets//images/bg1.png');
+    object-fit: cover;
+}
