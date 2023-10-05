@@ -13,44 +13,26 @@ import { motion } from "framer-motion"
 import Resume from "../assets/Resume.pdf"
 import { Link } from 'react-router-dom'
 const Home = () => {
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0
-  })
-  // console.log(mousePosition);
-  useEffect(() => {
-    const mouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      })
-    }
-    window.addEventListener("mousemove", mouseMove)
-    return () => {
-      window.removeEventListener("mousemove", mouseMove)
-    }
-  }, [])
-  const variants = {
-    default: {
-      x: mousePosition.x - 10,
-      y: mousePosition.y - 6
-    }
-  }
 
   return <>
-
-
-
     <div className='homeData img px-10    md:h-full  z-0 overflow-hidden scroll-smooth  '>
 
       <div className='grid grid-cols-12 h-screen  '>
-        <div className=' sm:col-span-6 z-10  md:col-span-6  w-full  text-slate-100 flex  justify-center flex-col '>
+        <motion.div
+          initial={{ y: "100vh", opacity: 0, scale: 0 }}
+          animate={{ y: 0, opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.5, type: "spring", stiffness: 100 }}
+          className=' sm:col-span-6 z-10  md:col-span-6  w-full  text-slate-100 flex  justify-center flex-col '>
 
           <div>
             <span className='text-xl opacity-95' >Hello I'm  </span>
             <span><strong className='text-2xl '>ONKAR</strong></span>
 
-            <p className=' w-[20rem] md:w-[30rem] opacity-70 mt-3'> A <strong>Frontend Developer</strong> with an impeccable skill set in React.js. Crafting seamless and captivating user interfaces is my forte. I'm dedicated to delivering top-tier web experiences. Let's elevate your projects to the next level together.    </p>
+            <motion.p
+
+              className=' text-lg w-[20rem] md:w-[30rem] opacity-70 mt-3 '> A <strong>Frontend Developer</strong> with an impeccable skill set in React.js. Crafting seamless and captivating user interfaces is my forte. I'm dedicated to delivering top-tier web experiences. Let's elevate your projects to the next level together.    </motion.p>
+
+
 
             <Link to={Resume}
               download="ONKAR BORGAONKAR "
@@ -61,23 +43,39 @@ const Home = () => {
                 className='bg-blue-600 text-slate-100 px-3 py-1 md:px-5 md:py-2 rounded-md my-3 text-sm md:text-base'> Resume  </button>
             </Link>
           </div>
-        </div>
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.3 }}
+            variants={{
+              visible: { opacity: 1, scale: 1 },
+              hidden: { opacity: 0, scale: 0 }
+            }}
+            className='h-4 w-60  my-3  flex  gap-3 items-center ' >
+            <p className='  '>Connect me on </p>
+            <div className='my-3 flex  '>
+              <Link to={'https://github.com/ONKAr156'} target="_blank">
+                <i className='cursor-pointer mx-2 bi bi-github'></i>
+              </Link>
+              <Link to={'https://www.linkedin.com/in/onkar-borgaonkar/'} target="_blank">
+                <i className='cursor-pointer mx-2 bi bi-linkedin'></i>
+              </Link>
 
-        <div className=' hidden md:block  md:h-auto  md:col-span-6 '>
-          <Lottie  animationData={lottie2}  style={{ height: "100%", width: "80%",opacity: "0.85", filter: "contrast(10%)"
+            </div>
+
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial={{ y: "100vh", opacity: 0, scale: 0 }}
+          animate={{ y: 0, opacity: 1, scale: 1 }}
+          className=' hidden md:block  md:h-auto  md:col-span-6 '>
+          <Lottie animationData={lottie2} style={{
+            height: "100%", width: "80%", opacity: "0.85", filter: "contrast(10%)"
           }}></Lottie>
-        </div>
+        </motion.div>
       </div>
-
-      <motion.div
-        variants={variants}
-        animate="default"
-        className='cursor'>
-      </motion.div>
-
-
-
-
 
       {/* <marquee className=" py-5  text-slate-100" behavior="scroll" direction="right" scrollamount="8" loop="infinite" >
         <i className='text-slate-50 bi bi-flag-fill mx-5' ></i>
