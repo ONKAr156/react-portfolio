@@ -16,7 +16,7 @@ const Data = [
         title: "Ecommers with Redux & Express",
         desc: "",
         git: "https://github.com/ONKAr156/Ecom-react",
-        demo: "https://ecom-react-1.vercel.app/"
+        demo: "https://planet-frontend.vercel.app//"
     },
     {
         id: 2,

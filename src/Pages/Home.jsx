@@ -30,7 +30,9 @@ const Home = () => {
 
             <motion.p
 
-              className=' text-lg w-[20rem] md:w-[30rem] opacity-70 mt-3 '> A <strong>Frontend Developer</strong> with an impeccable skill set in React.js. Crafting seamless and captivating user interfaces is my forte. I'm dedicated to delivering top-tier web experiences. Let's elevate your projects to the next level together.    </motion.p>
+              className=' text-lg w-[20rem] md:w-[30rem] opacity-70 mt-3 '>  As a budding <strong>Frontend Developer</strong>  
+              , I wield the tools of the trade, including React.js, Next.js, TypeScript, Redux, and JavaScript.  My portfolio is a canvas of simplicity and professionalism, where I craft web experiences that are both functional and uniquely engaging.  
+              </motion.p>
 
 
 
